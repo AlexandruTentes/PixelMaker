@@ -31,6 +31,10 @@ $( function(){
 		makeGrid();
 	});
 	
+	$("input[type=color]").click(function(){
+		$( this ).toggleClass("col", true);
+	});
+	
 	$("form").on("click", "a#backgrd", function(e){
 		e.preventDefault();
 		$("a#backgrd").toggleClass("clicked");
@@ -43,7 +47,7 @@ $( function(){
 	});
 	
 	$(document).on("mousedown", "td", function(e){
-		e.preventDefault();
+		e.preventDefault();	
 		check = true;
 	});
 	
@@ -53,44 +57,57 @@ $( function(){
 	
 	$(document).keydown(function(e){
 		if(e.keyCode == 16) secCheck = true;
+		
+		if(e.keyCode == 17 && secCheck){
+			$(getTable).children().children().css("background-color", clearColor);
+		}
 	});
 	
 	$(document).keyup(function(e){
 		if(e.keyCode == 16) secCheck = false;
 	});
 	
-	$(document).keydown(function(e){
-		if(e.keyCode == 17 && secCheck){
-			$(getTable).children().children().css("background-color", clearColor);
-		}
-	});
-	
 	$("#pixel_canvas").on("click", "td", function(e){ 
+		colorChangeCheck();
+		
 		if(secCheck){
 			if($( this ).attr("class") === "check"){
-				$( this ).toggleClass("check");
+				$( this ).toggleClass("check", false);
 				$( this ).css("background-color", clearColor)
 			}
 		}
-		else
+		else{
+			$( this ).toggleClass("check", true);
 			$( this ).css("background-color", getColor);
+		}
 	});
 	
 	$("#pixel_canvas").on("mousemove", "td", function(){
+		colorChangeCheck();
+		
 		if(check && !secCheck){
 			if($( this ).attr("class") !== "check"){
-				$( this ).toggleClass("check");
+				$( this ).toggleClass("check", true);
 			}
 			$( this ).css("background-color", getColor)
 		}else{
 			if(check && secCheck){
 				if($( this ).attr("class") === "check"){
-					$( this ).toggleClass("check");
+					$( this ).toggleClass("check", false);
 					$( this ).css("background-color", clearColor)
 				}
 			}
 		}
 	});
+	
+	function colorChangeCheck(){
+		if(getColor !== $("input[type=color]").val()){
+			getColor = $("input[type=color]").val();
+			$("input[type=color]").toggleClass("col", false);
+		} 
+		else
+			$("input[type=color]").toggleClass("col", false);
+	}
 
 	function makeGrid() {
 		
