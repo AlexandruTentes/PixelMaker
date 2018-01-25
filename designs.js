@@ -3,8 +3,6 @@
 
 // When size is submitted by the user, call makeGrid()
 $( function(){
-	const canv = document.querySelector("hiddenCanv");
-	const context = canv.getContext("2d");
 
 	$("#input_width").attr("max", "55");
 	$("#input_width").attr("value", "20");
@@ -42,12 +40,6 @@ $( function(){
 		}
 		else
 			$("a#backgrd").text("ON");
-	});
-	
-	$("a#hiddenCanv").click(function(){
-		canv.toBlob(function(blob){
-			saveAs(blob, "screenshot.png");
-		}, "image/png");
 	});
 	
 	$(document).on("mousedown", "td", function(e){
