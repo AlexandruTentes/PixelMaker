@@ -127,7 +127,6 @@ $( function(){
 		getTable.toggleClass("hasSecondClass", false);
 		getTable.toggleClass("hasThirdClass", true);
 		$("input[type=submit]").attr("value", "Reset");
-		context.drawImage(getTable, 0, 0);
 		}
 		else{
 			getTable.toggleClass("hasClass", false);
