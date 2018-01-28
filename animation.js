@@ -52,10 +52,10 @@ window.addEventListener("mousemove", function(event){
 $(window).on("resize", function(){
 	
 	//re-setting the size of canvas 
-	canvasToDraw.width = canvas.width;
-	canvasToDraw.height = canvas.height;
 	canvas.width = $(window).width();
 	canvas.height = $(window).height() + $("table").height();
+	canvasToDraw.width = canvas.width;
+	canvasToDraw.height = canvas.height;
 
 	drawEach();
 });
@@ -243,13 +243,13 @@ function animate(){
 	}
 	
 	//opening or closing the background drawing
-	if($("a#backgrd").text() === "OFF"){
+	if($("#backgrdText").text() === "OFF"){
 			objArray = [];
-			$("a#backgrd").attr("value", "once");
+			$("#backgrd").attr("value", "once");
 	}
 		
-	if($("a#backgrd").text() === "ON" && $("a#backgrd").attr("value") === "once"){
-		$("a#backgrd").attr("value", "");
+	if($("#backgrdText").text() === "ON" && $("#backgrd").attr("value") === "once"){
+		$("#backgrd").attr("value", "");
 		drawEach();
 	}
 	
