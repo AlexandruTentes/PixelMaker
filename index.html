@@ -8,12 +8,18 @@
 	<meta charset="UTF-8">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Monoton">
-    <link rel="stylesheet" href="https://glalex34.github.io/styles.css">
+    <link rel="stylesheet" href="styles.css">
 	
 </head>
 
 <body>
 
+	<audio id="myAudio" controls loop autoplay volume="0.2">
+	
+		<source src="music.mp3" type="audio/mpeg">
+	
+	</audio>
+	
 	<div id="mouseMove">
 
 		<canvas id="myCanvas"></canvas>
@@ -28,6 +34,22 @@
 			
 		</div>
 		
+		<div id="toolPoz">
+		
+			<span id="tutorial">Scroll using arrows or mouse wheel</span>
+			<a id="addingR">Add row.</a>
+			<a id="substractingR">Subtract row.</a>
+			<a id="addingC">Add cell.</a>
+			<a id="substractingC">Subtract cell.</a>
+			<a id="addingS">Add size.</a>
+			<a id="substractingS">Subtract size.</a>
+			<a id="gridCheck">With/Without border: <span id="borderCh">ON</span></a>
+			<a id="backgrd">Background: <span id="backgrdText">ON</span></a>
+			<a id="download">Download Image.</a>
+			<a id="musicCh">Music: <span id="musicChText">ON</span></a>
+			
+		</div>
+		
 		<h2>Choose Grid Size</h2>
 		
 		<form id="sizePicker">
@@ -37,12 +59,7 @@
 			<span>Grid Width:</span>
 			<input type="number" id="input_width" name="width" min="1" value="1">
 			<input type="submit">
-			<span>Background: </span>
-			<a id="backgrd">ON</a>
-			<!--
-				<span>Download Image: </span>
-				<a id="download">Download</a>
-			-->
+			<a>Toolbar: <span id="toolbarOpt">ON</span></a>
 			
 		</form>
 		
@@ -50,6 +67,7 @@
 		
 			<p id="commands">Hold shift + LeftMouseClick/Click to erase</p>
 			<p id="commands">Press Shift + Ctrl to clear the grid</p>
+			<p id="commands">Press Shift + Q to toggle the toolbar</p>
 			
 		</div>
 
@@ -59,12 +77,14 @@
 
 		<h2>Design Canvas</h2>
 		
+		<div id="hiddenMessage"><p></p></div>
+		
 		<table id="pixel_canvas"></table>
 		
-		<script src="https://glalex34.github.io/designs.js"></script>
+		<script src="designs.js"></script>
 	</div>
 	
-	<script src="https://glalex34.github.io/animation.js"></script>
+	<script src="animation.js"></script>
 	
 </body>
 
