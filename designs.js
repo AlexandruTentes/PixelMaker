@@ -113,10 +113,6 @@ $( function(){
 		if($("#input_width").val() > 1 && getWidth){
 			$("#input_width").attr("value", --getWidth);
 			$("tr").find("td:eq(" + getWidth + ")").remove();
-		}else{
-			$("#hiddenMessage > p").text("Create a grid first");
-			$("#hiddenMessage").css("display", "block");
-			window.scrollTo(0, document.body.scrollHeight);
 		}
 	});
 	
