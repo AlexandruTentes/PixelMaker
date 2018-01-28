@@ -9,6 +9,10 @@ body::-webkit-scrollbar{
 	display: none;
 }
 
+#creds{
+	color: blue;
+}
+
 audio{
 	display: none;
 }
