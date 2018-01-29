@@ -91,6 +91,7 @@ form > *{
 	color: blue;
 	box-shadow: 3px 3px #46FCFF;
 	width: 200px;
+	height: 5px;
 	display: block;
 	border-radius: 25px 25px 25px 25px;
 }
