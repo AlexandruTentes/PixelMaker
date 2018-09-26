@@ -55,11 +55,11 @@ $( function(){
 		$( this ).toggleClass("checkingPress");
 		
 		if($( this ).hasClass("checkingPress")){
-			$("#musicChText").text("OFF");
-			audio.pause();
-		}else{
 			$("#musicChText").text("ON");
 			audio.play();
+		}else{
+			$("#musicChText").text("OFF");
+			audio.pause();
 		}
 	});
 	
