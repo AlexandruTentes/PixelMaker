@@ -21,8 +21,8 @@ canvasToDraw.height = canvas.height;
 let objArray = [];
 
 //as the name suggests
-let addingNumber = 0;
-let numberOfObjToCreate = 1;
+let addingNumber = 50;
+let numberOfObjToCreate = 175;
 
 //creating the object's specs
 const radius = 20;
@@ -136,7 +136,6 @@ function object(x, y, radius, color, mass){
 	
 	//initializing the draw function that draws the object
 	this.draw = function(){
-		console.log(this.radius);
 		ctx.beginPath();
 		ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
 		ctx.strokeStyle = "gray";
