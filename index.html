@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <title>Pixel Art Maker!</title>
+	<meta charset="UTF-8">
+	<script src="lib/JQuary-3.2.1/jquery.js"></script>
+	<script src="lib/html2canvas.js"></script>
+	<script src="js/designs.js"></script>
+    <link rel="stylesheet" href="style/fonts/monoton.css">
+    <link rel="stylesheet" href="style/styles.css">
+	
+</head>
+
+<body>
+
+	<audio id="myAudio" controls loop autoplay volume="0.2">
+	
+		<source src="music/music.mp3" type="audio/mpeg">
+	
+	</audio>
+	
+	<div id="mouseMove">
+
+		<canvas id="myCanvas"></canvas>
+	
+	</div>
+	
+	<div id="miniBody">
+	
+		<div id="titlePoz">
+		
+			<p>Lab: Pixel Art Maker</p>
+			
+		</div>
+		
+		<span id="creds">Music: NEFFEX - Destiny</span>
+		<p id="creds">Channel: 
+			<a href="https://www.youtube.com/channel/UCBefBxNTPoNCQBU_Lta6Nvg" style="color: white; text-decoration: underline;"> Youtube Channel </a>
+		</p>
+		
+		<div id="toolPoz">
+		
+			<span id="tutorial">Scroll using arrows or mouse wheel</span>
+			<a id="addingR">Add row.</a>
+			<a id="substractingR">Subtract row.</a>
+			<a id="addingC">Add cell.</a>
+			<a id="substractingC">Subtract cell.</a>
+			<a id="addingS">Add size.</a>
+			<a id="substractingS">Subtract size.</a>
+			<a id="gridCheck">With/Without border: <span id="borderCh">ON</span></a>
+			<a id="musicCh">Music: <span id="musicChText"> ON </span></a>
+			
+		</div>
+		
+		<div id="toolSecPoz">
+		
+			<a id="download">
+				Download Image.				
+				<span id="hiddenPart">
+					<br>File Name:
+					<input type="string" id="input_fileName" name="fileName" value="tableExport">
+					<br>File Format:
+					<input type="string" id="input_fileFormat" name="fileFormat" value="png">
+				</span>
+			</a>
+			<a id="backgroundColorChange">
+				Background Color:
+				<br>
+				R:<input type="number" id="input_BgrdColR" name="bgrdCol" value ="125">
+				<br>
+				G:<input type="number" id="input_BgrdColG" name="bgrdCol" value ="115">
+				<br>
+				B:<input type="number" id="input_BgrdColB" name="bgrdCol" value ="125">
+			</a>
+			
+		</div>
+		
+		<h2>Choose Grid Size</h2>
+		
+		<form id="sizePicker">
+		
+			<span>Grid Height:</span>
+			<input type="number" id="input_height" name="height" min="1">
+			<span>Grid Width:</span>
+			<input type="number" id="input_width" name="width" min="1">
+			<input type="submit">
+			<a>Toolbar: <span id="toolbarOpt">ON</span></a>
+			
+		</form>
+		
+		<div id="commStyle">
+		
+			<p>Hold shift + LeftMouseClick/Click to erase</p>
+			<hr>
+			<p>Press Shift + Ctrl to clear the grid</p>
+			<hr>
+			<p>Press Shift + Q to toggle the toolbar</p>
+			<hr>
+			<p>Left click over the popping messages to close them </p>
+			<hr>
+			<p>You have to click "Download Image" or "Background Color" for the changes to take place</p>
+			
+		</div>
+
+		<h2>Pick A Color</h2>
+		
+		<input type="color" id="colorPicker">
+
+		<h2>Design Canvas</h2>
+		
+		<table id="pixel_canvas"></table>
+		
+		<div id="hiddenMessage"><p></p></div>
+		
+	</div>
+	
+	<script src="js/animation.js"></script>
+	
+</body>
+
+</html>
